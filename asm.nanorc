@@ -1,0 +1,25 @@
+## Assembly x86 (AT&T syntax)
+# /usr/share/nano
+
+syntax "asm" "\.(S|s|asm)$"
+magic "[Aa]ssembl(y|er)"
+
+# Sections
+color brightgreen "\.(data|subsection|text)"
+color green "\.(align|file|globl|global|hidden|section|size|type|weak)"
+color brightyellow "\.(ascii|asciz|byte|double|float|hword|int|long|short|single|struct|word)"
+
+# Labels
+icolor brightred "^[[:space:]]*[.0-9A-Z_]*:"
+
+# Comments
+color brightblue "#.*$"
+
+# Trailing whitespace
+color ,green "[[:space:]]+$"
+
+# Registers
+icolor brightgreen "(%eax|%ax|%al|%ebx|%bh|%bl|%ecx|%ch|%cl|%edx|%dh|%dl|%esi|%edi|%esp|%ebp|%eip)"
+
+# Immediates (HEX)
+icolor brightyellow "\$[0-9A-FX]*"
